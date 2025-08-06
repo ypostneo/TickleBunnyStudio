@@ -58,7 +58,7 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            background:none;
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
@@ -70,8 +70,14 @@
             transition: transform 0.3s ease;
         }
 
+
         .profile-img:hover {
             transform: scale(1.05) rotate(5deg);
+        }
+
+        .profile-img > img{
+          width:100%;
+          height: auto;
         }
 
         h1 {
@@ -324,13 +330,9 @@
 <body>
     <div class="container">
         <header>
-            <div class="profile-img">김창</div>
-            <h1>김창작</h1>
-            <p class="subtitle">Professional Stock Artist & Visual Creator</p>
-            <p class="bio">
-                5년간의 경험을 바탕으로 고품질 스톡 이미지를 제작하는 비주얼 아티스트입니다. 
-                브랜딩, 마케팅, 웹디자인을 위한 창의적이고 상업적 가치가 높은 이미지를 전문으로 합니다.
-            </p>
+            <div class="profile-img"><img src="./images/logo.png" alt="logo"></div>
+            <h1>TickleBunnyStudio</h1>
+            <p class="subtitle">Stock Artist Geumhye Oh</p>
         </header>
 
         <section class="section">
@@ -350,61 +352,9 @@
 
 
         <footer>
-            <p>© 2025 김창작. All rights reserved. | 더 나은 비주얼로 세상을 바꾸는 스톡 아티스트</p>
+            <p>© 2025 TickleBunnyStudio. All rights reserved.</p>
         </footer>
     </div>
-
-    <script>
-        // 갤러리 아이템에 호버 효과와 클릭 이벤트 추가
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        galleryItems.forEach(item => {
-            item.addEventListener('click', function() {
-                const category = this.getAttribute('data-category');
-                alert(`${category} 카테고리의 작품을 보시겠습니까?\n실제로는 해당 갤러리 페이지로 이동합니다.`);
-            });
-        });
-
-        // 연락처 아이템 클릭 이벤트
-        const contactItems = document.querySelectorAll('.contact-item');
-        contactItems.forEach(item => {
-            item.addEventListener('click', function() {
-                const label = this.querySelector('.contact-label').textContent;
-                const value = this.querySelector('.contact-value').textContent;
-                
-                if (label === '이메일') {
-                    window.location.href = `mailto:${value}`;
-                } else if (label === '전화번호') {
-                    window.location.href = `tel:${value}`;
-                } else if (label === '인스타그램') {
-                    window.open(`https://instagram.com/${value.replace('@', '')}`, '_blank');
-                } else if (label === '포트폴리오') {
-                    window.open(`https://${value}`, '_blank');
-                }
-            });
-        });
-
-        // 스크롤 애니메이션 효과
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // 섹션들에 옵저버 적용
-        document.querySelectorAll('.section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
-        });
-    </script>
+   
 </body>
 </html>
