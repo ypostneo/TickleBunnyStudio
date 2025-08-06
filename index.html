@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>김창작 - 스톡 아티스트 포트폴리오</title>
+    <title>TickleBunnyStudio</title>
     <style>
         * {
             margin: 0;
@@ -83,7 +83,7 @@
         h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
-            background: linear-gradient(135deg, #00d4ff, #ff6b9d);
+            background: linear-gradient(135deg, #fbe6bd, #ff6b9d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -139,25 +139,17 @@
         }
 
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            display: block;
             margin-top: 30px;
         }
 
         .gallery-item {
-            aspect-ratio: 1;
-            border-radius: 15px;
+            border-radius: 5px;
             overflow: hidden;
             position: relative;
             cursor: pointer;
-            transition: all 0.3s ease;
         }
 
-        .gallery-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
 
         .gallery-item::before {
             content: '';
@@ -166,17 +158,12 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, 
-                #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3);
             opacity: 0.8;
             transition: opacity 0.3s ease;
         }
 
-        .gallery-item:hover::before {
-            opacity: 0.9;
-        }
 
-        .gallery-item::after {
+        /* .gallery-item::after {
             content: attr(data-category);
             position: absolute;
             bottom: 15px;
@@ -188,8 +175,17 @@
             padding: 8px 12px;
             border-radius: 20px;
             backdrop-filter: blur(5px);
-        }
+        } */
 
+        .gallery-item > img{
+          width:100%;
+          height: auto;
+        }
+        .gallery-item+.gallery-item{
+
+          margin-top: 100px;
+
+        }
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -331,21 +327,34 @@
     <div class="container">
         <header>
             <div class="profile-img"><img src="./images/logo.png" alt="logo"></div>
-            <h1>TickleBunnyStudio</h1>
+            <h1>TickleBunny Studio</h1>
             <p class="subtitle">Stock Artist Geumhye Oh</p>
         </header>
 
         <section class="section">
             <h2>Illustration</h2>
             <div class="gallery">
-                <div class="gallery-item" data-category="비즈니스"></div>
-                <div class="gallery-item" data-category="라이프스타일"></div>
-                <div class="gallery-item" data-category="테크놀로지"></div>
-                <div class="gallery-item" data-category="자연/풍경"></div>
-                <div class="gallery-item" data-category="음식"></div>
-                <div class="gallery-item" data-category="여행"></div>
-                <div class="gallery-item" data-category="건강/피트니스"></div>
-                <div class="gallery-item" data-category="추상/패턴"></div>
+                <div class="gallery-item">
+                  <img src="./images/okh_01.png" alt="">
+                </div>
+                <div class="gallery-item">
+                  <img src="./images/okh_02.png" alt="">
+                </div>
+                <div class="gallery-item">
+                  <img src="./images/okh_03.png" alt="">
+                </div>
+                <div class="gallery-item">
+                  <img src="./images/okh_04.png" alt="">
+                </div>
+                <div class="gallery-item">
+                  <img src="./images/okh_05.png" alt="">
+                </div>
+                <div class="gallery-item">
+                  <img src="./images/okh_06.png" alt="">
+                </div>
+                <div class="gallery-item">
+                  <img src="./images/okh_07.png" alt="">
+                </div>
             </div>
         </section>
 
